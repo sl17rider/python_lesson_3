@@ -4,7 +4,8 @@ my_str = 'Все счастливые семьи похожи друг на др
 '''
 Задание 1. Методами строк очистить текст от знаков препинания
 '''
-print(my_str.replace(',', '').replace('.','').replace('!', '').replace('?', '').replace('-', '').replace(':','').replace(';',''))
+my_str = my_str.replace(',', '').replace('.','').replace('!', '').replace('?', '').replace('-', '').replace(':','').replace(';','')
+print(my_str)
 
 '''
 Задание 2. Cформировать list со словами (split)
@@ -23,5 +24,20 @@ print(my_new_list)
 '''
 my_dict = {}
 for word in my_new_list:
-    my_dict = my_new_list.count(word)
+    my_dict[word] = my_new_list.count(word)
 print(my_dict)
+
+'''
+Задание 4. Вывести 5 наиболее часто встречающихся слов (sort), вывести количество разных слов в тексте (set).
+'''
+count_list = (list(my_dict.items()))
+count_list.sort(key = lambda x: x[1], reverse = True)
+top_five = count_list[0:5]
+print(top_five)
+print(set(count_list))
+
+# Это то, о чем говорили в переписке про сортировку:
+# set_words = set(my_new_list)
+# quantity_words = len(set_words)
+# print(quantity_words)
+# ?
